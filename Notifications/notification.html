@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Notifications 展示用例</title>
+</head>
+<body>
+<button>Notify ME</button>
+<script>
+    window.addEventListener("load", function(){
+        if(Notification && Notification.permission !== "granted"){
+            Notification.requestPermission(function(status){
+                if(Notification.permission !== status){
+                    Notification.permission = status;
+                }
+            });
+        }
+        var button = document.getElementsByTagName("button")[0];
+        button.addEventListener("click", function(){
+            var t = new Date().toLocaleString();
+            var options={
+                dir: "ltr",
+                lang: "utf-8",
+                icon: "https://static.oschina.net/uploads/user/1174/2348263_100.png?t=1439773471000",
+                body: "您有一笔新订单产生...  点击查看>>>"
+            };
+            if(Notification && Notification.permission === "granted"){
+                var n = new Notification("检啦网: "+ t, options);
+                n.onshow = function(){
+                    console.log("You got me!");
+                };
+                n.onclick = function() {
+                    alert("点击通知打开网站!");
+                    window.location = "http://localhost:8080/order/org_order_mng.html";
+                };
+                n.onclose = function(){
+                    console.log("notification closed!");
+                };
+                n.onerror = function() {
+                    console.log("An error accured");
+                }
+            }else if(Notification && Notification.permission !== "denied") {
+                Notification.requestPermission(function(status){
+                    if(Notification.permission !== status){
+                        Notification.permission = status;
+                    }
+
+                    if(status === "granted"){
+                        for(var i = 0; i < 3; i++){
+                            var n = new Notification("Hi! " + i, {
+                                tag: "Beyoung",
+                                icon: "https://static.oschina.net/uploads/user/1174/2348263_100.png?t=1439773471000",
+                                body: "你好呀，我是第" + i +"条消息啦！"
+                            });
+                        }
+                    }
+                });
+            }else{
+                alert("Hi!");
+            }
+        });
+    });
+</script>
+</body>
+</html>
