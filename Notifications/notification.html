@@ -25,7 +25,7 @@
                 body: "您有一笔新订单产生...  点击查看>>>"
             };
             if(Notification && Notification.permission === "granted"){
-                var n = new Notification("检啦网: "+ t, options);
+                var n = new Notification("检啦网:"+ t, options);
                 n.onshow = function(){
                     console.log("You got me!");
                 };
