@@ -9,7 +9,7 @@
 <script>
     function getBrowser() {
         var ua = window.navigator.userAgent;
-        var isIE = window.ActiveXObject != undefined && ua.indexOf("MSIE") != -1;
+        var isIE = window.ActiveXObject != undefined && ua.indexOf("MSIE") != -1;  //这个判定在高版本IE浏览器中失效
         var isFirefox = ua.indexOf("Firefox") != -1;
         var isOpera = window.opr != undefined;
         var isChrome = ua.indexOf("Chrome") && window.chrome;
@@ -25,7 +25,12 @@
         } else if (isSafari) {
             return "Safari";
         } else {
-            return "Unkown";
+            var _isIE = ua.indexOf("Windows");
+            if(_isIE){
+                return "高版本IE";
+            }else {
+                return "Unkown";
+            }
         }
     }
     alert(getBrowser());
