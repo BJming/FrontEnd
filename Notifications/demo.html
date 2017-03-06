@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基于阮一峰教程</title>
+</head>
+<body>
+<script>
+//    Notification.permission属性，用于读取用户给予的权限，它是一个只读属性，它有三种状态。
+
+//    default：用户还没有做出任何许可，因此不会弹出通知。
+//    granted：用户明确同意接收通知。
+//    denied：用户明确拒绝接收通知。
+
+//    判定是否支持 Notification API
+    if(window.Notification){
+        //支持
+        if(window.Notification && Notification.permission !== "denied"){
+            Notification.requestPermission(function (status) {
+//                var notification = new Notification(title, options);
+
+//                options属性是可选的，格式为一个对象，用来设定各种设置。该对象的属性如下：
+//
+//                dir：文字方向，可能的值为auto、ltr（从左到右）和rtl（从右到左），一般是继承浏览器的设置。  ???感觉我的本地环境下 都是ltr
+//                lang：使用的语种，比如en-US、zh-CN。
+//                body：通知内容，格式为字符串，用来进一步说明通知的目的。。
+//                tag：通知的ID，格式为字符串。一组相同tag的通知，不会同时显示，只会在用户关闭前一个通知后，在原位置显示。
+//                icon：图表的URL，用来显示在通知上
+
+                var notification = new Notification('收到新邮件', {dir: 'ltr', lang: 'utf-8',icon:'https://static.oschina.net/uploads/user/1174/2348263_100.png?t=1439773471000', body:'您总共有3封未读邮件。'});//已经执行了
+                notification.onshow = function() {
+                    console.log('Notification shown !!!');
+                    setTimeout(notification.close.bind(notification), 5000);//设置5秒延时关闭，提高用户体验
+                };
+                notification.onclick = function () {
+                    if(confirm("是否前去查看消息")){
+                        notification.close();
+                        window.location='http://localhost:8080/order/org_order_mng.html';
+                    }
+                }
+            })
+        }
+
+    }else {
+        //不支持
+        alert("Hi!");
+    }
+</script>
+</body>
+</html>
