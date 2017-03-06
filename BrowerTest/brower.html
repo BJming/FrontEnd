@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>判断五种物流浏览器</title>
+    <script src="http://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+</head>
+<body>
+<script>
+    function getBrowser() {
+        var ua = window.navigator.userAgent;
+        var isIE = window.ActiveXObject != undefined && ua.indexOf("MSIE") != -1;
+        var isFirefox = ua.indexOf("Firefox") != -1;
+        var isOpera = window.opr != undefined;
+        var isChrome = ua.indexOf("Chrome") && window.chrome;
+        var isSafari = ua.indexOf("Safari") != -1 && ua.indexOf("Version") != -1;
+        if (isIE) {
+            return "IE";
+        } else if (isFirefox) {
+            return "Firefox";
+        } else if (isOpera) {
+            return "Opera";
+        } else if (isChrome) {
+            return "Chrome";
+        } else if (isSafari) {
+            return "Safari";
+        } else {
+            return "Unkown";
+        }
+    }
+    alert(getBrowser());
+</script>
+</body>
+</html>
