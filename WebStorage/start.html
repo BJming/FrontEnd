@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Storage demo</title>
+</head>
+<body>
+<!--Web Storage 分为两类：-->
+<!--1、sessionStorage 会话结束（关闭窗口），数据清空   2、localStorage 长期保存，下次访问，直接读取-->
+<!--除保存期不同， 属性，方法完全一致-->
+
+<!--通过检查window.sessionStorage window.localStorage 判断是否支持-->
+
+<script>
+//    判断函数
+    function checkStorageSupport() {
+        //sessionStorage
+        if(window.sessionStorage){
+            return ture;
+        }else {
+            return false;
+        }
+        //localStorage
+        if(window.localStorage){
+            return true;
+        }else {
+            return false;
+        }
+    }
+//    save||update
+    sessionStorage.setItem("key", "value");
+    localStorage.setItem("key", "value");
+//    get
+    var valueSession = sessionStorage.getItem("key");
+    var valueLoal = localStorage.getItem("key");
+//    remove
+    sessionStorage.removeItem("key");
+    localStorage.removeItem("key");
+//    clear
+    sessionStorage.clear();
+    localStorage.clear();
+//    遍历
+    for (var i = 0; i< localStorage.length; i++){
+        console.log(localStorage.key(i));//key方法，根据位置，从0开始获取键值
+    }
+    for(var  j = 0; j<sessionStorage.length;j++){
+        console.log(sessionStorage.key(j));
+    }
+//    storage事件
+//    当储存的数据发生变化时，会触发storage事件，可以指定该事件的回调函数
+    function onStorageChange(e) {
+        console.log(e.key);
+    }
+//除了key属性，event对象的属性还有三个
+//oldValue 更新前的值，若新增，则为null，   newValue 更新后的值，若删除，则为null
+// url 原始触发storage事件的那个网页网址
+    window.addEventListener("storage", onStorageChange);
+//    特别说明，当浏览器同时打开一个域名下的多个页面，当其中一个页面改名sessionStorage或localStorage的数据时，
+//    其他所有页面的storage事件会被触发，而原始页面并不触发storage。
+//    可以通过这种机制，实现多个窗口之间的通信。
+//    只有IE浏览器，会在所有页面触发storage事件。
+</script>
+
+</body>
+</html>
