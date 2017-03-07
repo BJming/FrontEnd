@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <!--引入依赖-->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap初体验——栅格系统</title>
+    <!--页面元素摘抄至这篇博客http://blog.csdn.net/raosheng1993/article/details/45419085，但实际效果span4 span4 span4没有出现，
+    可能原因：当时写这篇博文人所使用的bootstrap版本与目前我所使用的不同，导致的显示差异-->
+
+</head>
+<body>
+<div class="container">
+    <h1 class="page-header">布局<small> 使用Bootstrap的网格系统布局网页</small></h1>
+    <p>Bootstrap默认的栅格系统为12列 ，形成一个940px宽的容器，默认没有启用 响应式布局特性 。如果加入响应式布局CSS文件，栅格系统会自动根据可视窗口的宽度从724px到1170px进行动态调整。在可视窗口低于767px宽的情况下，列将不再固定并且会在垂直方向堆叠。
+    </p>
+    <div class="row">
+        <div class="col-lg-4">
+            <h2 class="page-header">区块一</h2>
+            <p>对于简单的两列式布局，创建一个 .row 容器，并在容器中加入合适数量的 .span* 列即可。由于默认是12列的栅格，所有 .span* 列所跨越的栅格数之和最多是12(或者等于其父容器的栅格数)。
+            </p>
+        </div>
+        <div class="col-lg-4">
+            <h2 class="page-header">区块二</h2>
+            <p>把列向右移动可使用 .offset* 类。每个类都给列的左边距增加了指定单位的列。例如，.offset4 将 .span4 右移了4个列的宽度。
+            </p>
+        </div>
+        <div class="col-lg-4">
+            <h2 class="page-header">区块三</h2>
+            <p>在默认的栅格系统里, 在已有的.span*内添加一个新的 .row 并加入 .span* 列，就可实现嵌套。被嵌套列中的每列列数总和要等于父级列。
+            </p>
+            <div class="row">
+                <div class="span2">
+                    在默认的栅格系统里, 在已有的.span*内添加一个新的 .row 并加入 .span* 列，就可实现嵌套。被嵌套列中的每列列数总和要等于父级列。
+                </div>
+                <div class="span2">
+                    在默认的栅格系统里, 在已有的.span*内添加一个新的 .row 并加入 .span* 列，就可实现嵌套。被嵌套列中的每列列数总和要等于父级列。
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="http://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

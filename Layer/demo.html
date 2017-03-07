@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Layer Demo</title>
+    <!--引入依赖-->
+    <script src="http://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/layer/3.0.1/layer.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-offset-2">
+            <button class="btn btn-default layer-default">初体验</button>
+            <button class="btn btn-default layer-msg">msg</button>
+            <button class="btn btn-default layer-page-1">页面层</button>
+            <button class="btn btn-default layer-loading">loding动画</button>
+            <button class="btn btn-default layer-1">待定</button>
+        </div>
+    </div>
+</div>
+<script>
+    // alert 1-7 超出7默认7   icon:1: V 2: X 3: ? 4:锁 5:unhappy 6:happy 7:!
+    $(".layer-default").on("click", function () {
+        layer.alert("初体验", {icon: 6});
+    });
+    //提示
+    $(".layer-msg").on("click", function () {
+        layer.msg("提示");
+    })
+    //页面层
+    $('.layer-page-1').on('click', function () {
+        layer.open({
+            type: 1,
+            area: ['600px', '360px'],
+            shadeClose: true, //点击遮罩关闭
+            content: '\<\div style="padding:20px;">自定义内容\<\/div>'
+        });
+    });
+    //弹出一个loading层
+    $('.layer-loading').on('click', function(){
+        var ii = layer.load();
+        //此处用setTimeout演示ajax的回调
+        setTimeout(function(){
+            layer.close(ii);
+        }, 15000);
+    });
+</script>
+</body>
+</html>
