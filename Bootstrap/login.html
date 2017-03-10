@@ -9,6 +9,23 @@
     <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://cdn.bootcss.com/bootstrap-validator/0.5.3/css/bootstrapValidator.min.css" rel="stylesheet">
     <script src="http://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
+    <style>
+        .col-center-block {
+            float: none;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .modal-dialog{
+            top:100px;
+        }
+        .modal-header{
+            text-align: center;
+        }
+        .modal-footer{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 <div id="topbar" class="navbar">
@@ -32,7 +49,7 @@
                 <li><a href="#" target="_blank">{{menu_6}}</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right hidden-sm">
-                <li><a href="/login/">登陆</a></li>
+                <li><a href="/login/" data-toggle="modal" data-target=".bs-example-modal-sm">登陆</a></li>
                 <li><a href="#">|</a></li>
                 <li><a href="/regist/">注册</a></li>
             </ul>
@@ -42,8 +59,8 @@
 
 
 <div id="main" class="container">
-    <h1 class="page-header">布局
-        <small> 使用Bootstrap的网格系统布局网页</small>
+    <h1 class="page-header">{{系统名称}}项目管理
+        <small> 您值得信赖的管理伙伴——Power By BJming !!!</small>
     </h1>
     <p>Bootstrap默认的栅格系统为12列 ，形成一个940px宽的容器，默认没有启用 响应式布局特性
         。如果加入响应式布局CSS文件，栅格系统会自动根据可视窗口的宽度从724px到1170px进行动态调整。在可视窗口低于767px宽的情况下，列将不再固定并且会在垂直方向堆叠。
@@ -129,6 +146,45 @@
         </div>
     </div>
 </footer>
+<!-- 模态框（Modal） -->
+<div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    {{登陆}}
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="container" style="width: 400px;">
+                    <!--<form id="loginForm" method="post">-->
+                    <div class="form-group">
+                        <!--<label class="col-lg-3 control-lable">用户名</label>-->
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" name="username" placeholder="用户名">
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                        <!--<lable class="col-lg-3 control-label">密码</lable>-->
+                        <div class="col-lg-8">
+                            <input type="password" class="form-control" name="password" placeholder="密码">
+                        </div>
+                    </div>
+                    <!--</form>-->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">登陆</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
 <script src="modifyScript.js"></script>
 </body>
 </html>
