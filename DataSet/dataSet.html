@@ -1,0 +1,18 @@
+<!Doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>dataSet Demo</title>
+</head>
+<body>
+<div id="user" data-id="1234567890" data-user="johndoe" data-date-of-birth>John Doe</div>
+<script>
+    <!--dataSet如何获取与设置-->
+    var data = document.getElementById("user");
+    console.log(data.getAttribute("data-id"));
+    console.log(data.getAttribute("data-user"));
+    console.log(data.dataset.id);
+    console.log(data.dataset.user);
+</script>
+</body>
+</html>
