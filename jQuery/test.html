@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.js"></script>
+    <script src="//cdn.bootcss.com/jquery-validate/1.15.1/jquery.validate.js"></script>
+    <style>
+        img{
+            width:50px; /*在html,设置宽，不设置高，图片就会等比例缩放？？？不知道谁最先提出这个也是一种技巧*/
+        }
+        .label-title {   /*To make the input-text align*/
+            display: inline-block;
+            width: 130px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<form id="validateDemo" name="validateDemo" >
+    <!--可以思考：fieldset 结合 bootstrap UI 打造亮人眼球的登陆框-->
+    <fieldset id="myFieldset">
+        <legend><img src="http://imgtu.5011.net/uploads/content/20170227/1005071488177508.jpg"></legend>
+        <p>
+            <label class="label-title">用户名:</label><input type="text" id="username" name="username">
+        </p>
+        <p>
+            <label class="label-title">邮箱:</label><input type="text" id="email" name="email">
+        </p>
+        <p>
+            <label class="label-title">密码:</label><input type="password" id="password" name="password">
+        </p>
+        <p>
+            <label class="label-title">确认密码:</label><input type="password" id="confirm-password" name="confirm-password">
+        </p>
+        <p>
+            <input type="submit" value="提交">
+        </p>
+    </fieldset>
+</form>
+<script>
+    $(document).ready(function () {
+        $("#registerForm").attr("disabled", true);
+        debug:true,
+            $("#validateDemo").validate({
+                rules:{
+                    username:{
+                        required:true,
+                        minlength:2
+                    },
+                    email:{
+                        required:true,
+                        email:true
+                    },
+                    password:{
+                        required:true,
+                        minlength:6
+                    },
+                    "confirm-password":{   /*there is Dashes within the name, so need to add quotation mark when call it */
+                        equalTo:"#password"
+                    }
+                },
+
+                messages:{
+                    username:{
+                        required:"请输入用户名",
+                        minlength:"用户名长度应>2"
+                    },
+                    email:{
+                        required:"请输入您的邮箱",
+                        email:"请检查您的邮箱格式"
+                    },
+                    password:{
+                        required:"请设置一个密码",
+                        minlength:"密码长度至少为6位"
+                    },
+                    "confirm-password":{
+                        equalTo:"密码不一致"
+                    }
+                }
+            });
+    })
+</script>
+</body>
+</html>

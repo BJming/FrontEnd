@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>JqueryAndValidate_JS</title>
+    <!--引入所需的css+js-->
+    <script src="http://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+    <script src="../_static/jquery.validate.min.js"></script>
+    <style>
+        .label-title {   /*To make the input-text align*/
+            display: inline-block;
+            width: 130px;
+        }
+    </style>
+</head>
+<body>
+<form id="registerForm" action="https://www.baidu.com" method="get">
+    <fieldset>
+        <legend>user-register</legend>
+
+        <p>
+            <label for="userName" class="label-title">Name : </label>
+            <input id="userName" name="userName" type="text" />
+        </p>
+
+        <p>
+            <label for="userEmail" class="label-title">E-mail : </label>
+            <input id="userEmail" name="userEmail" type="text" />
+        </p>
+
+        <p>
+            <label for="userPassword" class="label-title">password : </label>
+            <input id="userPassword" name="userPassword" type="password" />
+        </p>
+
+        <p>
+            <label for="confirm-password" class="label-title">confirm-password : </label>
+            <input id="confirm-password" name="confirm-password" type="password" />
+        </p>
+
+        <p>
+            <input type="submit" value="Submit" />
+        </p>
+
+    </fieldset>
+</form>
+
+<!--<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.js"></script>-->
+<!--<script src="//cdn.bootcss.com/jquery-validate/1.15.1/jquery.validate.js"></script>-->
+<script>
+    $(document).ready(function(){
+        debug:true,     /*若参数为TRUE,那么表单不会提交，只进行检查，调试十分方便。*/
+            $("#registerForm").validate({    /* bound with the form and validate funtion */
+                rules:{  /* key: rules */
+                    userName:{    /* align with html element's name' */
+                        required:true,
+                        minlength:2
+                    },
+                    userEmail:{    /* align with html element's name' */
+                        required:true,
+                        email:true   /* validate the e-mail format */
+                    },
+                    userPassword:{
+                        required:true,
+                        minlength:6
+                    },
+                    "confirm-password":{   /*there is Dashes within the name, so need to add quotation mark when call it */
+                        equalTo:"#userPassword"
+                    }
+                },
+
+                messages:{     /* key: messages prompt*/
+                    userName:{
+                        required:"Please enter a valid name",      /* required: can be null or not  */
+                        minlength:"The name's length should be more than 2"    /* minlength/maxlength  */
+                    },
+                    userPassword:{
+                        required:"Please enter password",
+                        minlength:"The password's length should be  6 or above"
+                    },
+                    "confirm-password":{
+                        equalTo:"Both passwords are not aligned"
+                    }
+
+                }
+            });
+    });
+</script>
+</body>
+</html>
