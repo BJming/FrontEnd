@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <script src="http://localhost:8080/static/vue2.0/vue.js"></script>
+</head>
+<body>
+<div class="container">
+    <input type="checkbox" id="checkbox" value="true" v-model="checked">
+    <label for="checkbox">{{ checked }}</label>
+</div>
+</body>
+<script>
+    var vm = new Vue({
+        el:'.container',
+        data:{
+            checked:''
+        },
+        computed:{
+
+        },
+        methods:{
+
+        },
+        mounted:function () {
+        }
+    })
+</script>
+</html>
