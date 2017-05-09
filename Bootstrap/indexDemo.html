@@ -3,8 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!--引入所需的css+js-->
+    <script src="http://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/bootstrap-validator/0.5.3/css/bootstrapValidator.min.css" rel="stylesheet">
+    <script src="http://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
+    <!--实现bootstrap-validator 的中文化-->
+    <script src="http://cdn.bootcss.com/bootstrap-validator/0.5.3/js/language/zh_CN.js"></script>
+
+    <!--自定义css样式-->
+    <style>
+        .col-center-block {
+            float: none;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
 <body>
 
+<div id="topbar" class="navbar">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only"><a style="color:#000000;">简一项目管理</a></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand hidden-sm" href="#">logo</a>
+        </div>
+        <div class="navbar-collapse collapse" role="navigation">
+            <ul class="nav navbar-nav">
+                <li class="hidden-sm hidden-md"><a href="#" target="_blank">简一项目管理</a></li>
+                <li><a href="/" target="_blank">首页</a></li>
+                <li><a href="/project/show.html" target="_blank">项目</a></li>
+                <li><a href="#" target="_blank">任务板</a></li>
+                <li><a href="#" target="_blank">我的私信</a></li>
+                <li><a href="/document/list.html" target="_blank">文档</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right hidden-sm">
+                <li><a href="/login.html" data-toggle="modal" data-target=".bs-example-modal-sm">登陆</a></li>
+                <li><a href="/regist.html">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-sm-6 col-md-4 col-lg-3 ">
+            <div class="thumbnail">
+                <a href="#" title="xxx开发项目" target="_blank" onclick="">
+                    <img class="lazy" src="vuejs.png" width="300px" height="150px" data-src="" alt="项目配图，可以没有"></a>
+                <div class="caption">
+                    <h3>
+                        <a href="#" title="">projectName<br><span class="btn btn-sm btn-default">查看详情</span></a>
+                    </h3>
+                    <p>projectDesc,项目的一句话概括，让用户快速了解项目的大致信息。。。。
+                        例如，这是xxx共享单车软件，让用户体验最便捷的小黄车，随到随停，随骑随走......
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 ">
+            <div class="thumbnail">
+                <a href="#" title="xxx开发项目" target="_blank" onclick="">
+                    <img class="lazy" src="vuejs.png" width="300px" height="150px" data-src="" alt="项目配图，可以没有"></a>
+                <div class="caption">
+                    <h3>
+                        <a href="#" title="">projectName<br><span class="btn btn-sm btn-default">查看详情</span></a>
+                    </h3>
+                    <p>projectDesc,项目的一句话概括，让用户快速了解项目的大致信息。。。。
+                        例如，这是xxx共享单车软件，让用户体验最便捷的小黄车，随到随停，随骑随走......
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 ">
+            <div class="thumbnail">
+                <a href="#" title="xxx开发项目" target="_blank" onclick="">
+                    <img class="lazy" src="vuejs.png" width="300px" height="150px" data-src="" alt="项目配图，可以没有"></a>
+                <div class="caption">
+                    <h3>
+                        <a href="#" title="">projectName<br><span class="btn btn-sm btn-default">查看详情</span></a>
+                    </h3>
+                    <p>projectDesc,项目的一句话概括，让用户快速了解项目的大致信息。。。。
+                        例如，这是xxx共享单车软件，让用户体验最便捷的小黄车，随到随停，随骑随走......
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 ">
+            <div class="thumbnail">
+                <a href="#" title="xxx开发项目" target="_blank" onclick="">
+                    <img class="lazy" src="vuejs.png" width="300px" height="150px" data-src="" alt="项目配图，可以没有"></a>
+                <div class="caption">
+                    <h3>
+                        <a href="#" title="">projectName<br><span class="btn btn-sm btn-default">查看详情</span></a>
+                    </h3>
+                    <p>projectDesc,项目的一句话概括，让用户快速了解项目的大致信息。。。。
+                        例如，这是xxx共享单车软件，让用户体验最便捷的小黄车，随到随停，随骑随走......
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 ">
+            <div class="thumbnail">
+                <a href="#" title="xxx开发项目" target="_blank" onclick="">
+                    <img class="lazy" src="vuejs.png" width="300px" height="150px" data-src="" alt="项目配图，可以没有"></a>
+                <div class="caption">
+                    <h3>
+                        <a href="#" title="">projectName<br><span class="btn btn-sm btn-default">查看详情</span></a>
+                    </h3>
+                    <p>projectDesc,项目的一句话概括，让用户快速了解项目的大致信息。。。。
+                        例如，这是xxx共享单车软件，让用户体验最便捷的小黄车，随到随停，随骑随走......
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6 col-md-4 col-lg-3 ">
+            <div class="thumbnail">
+                <a href="#" title="xxx开发项目" target="_blank" onclick="">
+                    <img class="lazy" src="vuejs.png" width="300px" height="150px" data-src="" alt="项目配图，可以没有"></a>
+                <div class="caption">
+                    <h3>
+                        <a href="#" title="">projectName<br><span class="btn btn-sm btn-default">查看详情</span></a>
+                    </h3>
+                    <p>projectDesc,项目的一句话概括，让用户快速了解项目的大致信息。。。。
+                        例如，这是xxx共享单车软件，让用户体验最便捷的小黄车，随到随停，随骑随走......
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6 col-md-4 col-lg-3 ">
+            <div class="thumbnail">
+                <a href="#" title="xxx开发项目" target="_blank" onclick="">
+                    <img class="lazy" src="vuejs.png" width="300px" height="150px" data-src="" alt="项目配图，可以没有"></a>
+                <div class="caption">
+                    <h3>
+                        <a href="#" title="">projectName<br><span class="btn btn-sm btn-default">查看详情</span></a>
+                    </h3>
+                    <p>projectDesc,项目的一句话概括，让用户快速了解项目的大致信息。。。。
+                        例如，这是xxx共享单车软件，让用户体验最便捷的小黄车，随到随停，随骑随走......
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 ">
+            <div class="thumbnail">
+                <a href="#" title="xxx开发项目" target="_blank" onclick="">
+                    <img class="lazy" src="vuejs.png" width="300px" height="150px" data-src="" alt="项目配图，可以没有"></a>
+                <div class="caption">
+                    <h3>
+                        <a href="#" title="">projectName<br><span class="btn btn-sm btn-default">查看详情</span></a>
+                    </h3>
+                    <p>projectDesc,项目的一句话概括，让用户快速了解项目的大致信息。。。。
+                        例如，这是xxx共享单车软件，让用户体验最便捷的小黄车，随到随停，随骑随走......
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer ">
+    <div class="container">
+        <div class="row footer-top">
+            <div class="col-sm-6 col-lg-6">
+                <h4>
+                    <img id="logo_bottom" data-src="https://static.bootcss.com/www/assets/img/logo.png" src="">
+                </h4>
+                <p>本网站 copyright <a href="http://www.bootcss.com/">简易项目管理</a> <a href="" target="_blank">BJming</a>维护
+                </p>
+            </div>
+            <div class="col-sm-6  col-lg-5 col-lg-offset-1">
+                <div class="row about">
+                    <div class="col-xs-3">
+                        <h4>关于</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="/about/">关于我们</a></li>
+                            <li><a href="/ad/">广告合作</a></li>
+                            <li><a href="/links/">友情链接</a></li>
+                            <li><a href="/hr/">招聘</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-3">
+                        <h4>联系方式</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#">卡密欧</a></li>
+                            <li><a href="#" target="_blank">QQ:2200957132</a></li>
+                            <li><a href="#">邮箱:baojiaming@163.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-3">
+                        <h4>旗下网站</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#" target="_blank">epm</a></li>
+                            <li><a href="#" target="_blank">卡密欧中国</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-3">
+                        <h4>赞助商</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#" target="_blank">虚位以待</a></li>
+                            <li><a href="#" target="_blank">虚位以待</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <hr/>
+        <div class="row footer-bottom">
+            <ul class="list-inline text-center">
+                <li><a href="http://www.zust.edu.cn" target="_blank">浙江科技学院软件工程系</a></li>
+                <li>1130299332</li>
+            </ul>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
