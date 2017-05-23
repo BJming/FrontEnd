@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>测试bd_share</title>
+</head>
+<body>
+<!--<div class="bdsharebuttonbox" data-tag="share_1">-->
+    <!--<a class="bds_mshare" data-cmd="mshare"></a>-->
+    <!--<a class="bds_qzone" data-cmd="qzone" href="#"></a>-->
+    <!--<a class="bds_tsina" data-cmd="tsina"></a>-->
+    <!--<a class="bds_baidu" data-cmd="baidu"></a>-->
+    <!--<a class="bds_renren" data-cmd="renren"></a>-->
+    <!--<a class="bds_tqq" data-cmd="tqq"></a>-->
+    <!--&lt;!&ndash;<a class="bds_more" data-cmd="more">更多</a>&ndash;&gt;-->
+    <!--&lt;!&ndash;<a class="bds_count" data-cmd="count"></a>&ndash;&gt;-->
+<!--</div>-->
+<div class="container">
+    <p>测试一下划词分享功能能否实现，然后试着给检啦网站中的服务详情页面添加这个功能上去。。。</p>
+</div>
+<script>
+    var url =window.location.href;
+    window._bd_share_config = {
+        /*常用设置*/
+        common : {
+            bdText : '${service.title }_${orgnization.nameCn }',
+            bdDesc : '${service.intro }${service.orgitemNames }',
+            bdUrl : url,
+            bdPic : 'http://www.ajianla.com/${service.iconUrl1 }'
+        },
+        share : [{
+            "bdSize" : 16
+        }],
+        /*浮动框*/
+        slide : [{
+            bdImg : 2,
+            bdPos : "left",
+            bdTop : 100
+        }],
+        /*图片分享*/
+        image : [{
+            viewType : 'list',
+            viewPos : 'top',
+            viewColor : 'black',
+            viewSize : '16',
+            viewList : ['qzone','tsina','huaban','tqq','renren']
+        }],
+        /*划词分享*/
+        selectShare : [{
+            "bdselectMiniList" : ['qzone','tqq','kaixin001','bdxc','tqf']
+        }]
+    }
+    with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+</body>
+</html>
