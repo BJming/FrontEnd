@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event</title>
+    <script src="http://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <br>
+    <br>
+    <hr>
+    <a class="btn btn-a-1" href="http://www.baidu.com">测试event</a>
+    <a class="btn btn-a-2" href="http://www.jb51.net">测试event2</a>
+    <a class="btn btn-a-3" href="http://www.baidu.com">测试event3</a>
+    <a class="btn btn-a-4" href="http://www.baidu.com">测试event3</a>
+    <br>
+    <br>
+    <hr>
+</div>
+<script>
+    /*http://www.cnblogs.com/sntetwt/p/3957905.html
+    * 以及
+    * jianlaweb service_detail.jsp页面中showDetail 方法*/
+
+    $(".btn-a-1").click(function(event){
+        alert(event.type); //获取时间类型
+        return false; //阻止链接跳转
+    })
+
+    $("a[href='http://www.jb51.net']").click(function(event){
+        alert(event.target.href); //获取触发事件的<a>元素的href属性值
+        alert(event.target.tagName); //获取触发事件的元素的标签名称
+        return false; //阻止链接跳转
+     })
+
+    $(function() {
+        $(".btn-a-3").click(function(event) {
+            alert("Current mouse position:" + event.pageX + "," + event.pageY);
+            //获取鼠标当前相对于页面的坐标
+            return false; //阻止链接跳转
+        });
+    })
+
+    /* event || e 相同 */
+    $(".btn-a-4").click(function (e) {
+        alert(e.pageX+","+e.pageY);
+        alert($.event.pageX);
+        return false;
+    })
+
+    /*这个方法覆盖了其他的jquery事件*/
+    //    $(function() {
+    //        $("body").mousedown(function(e) {
+    //            alert(e.which); //1 = 鼠标左键；2 = 鼠标中键；3 = 鼠标右键。
+    //        })
+    //    })
+
+</script>
+</body>
+</html>
