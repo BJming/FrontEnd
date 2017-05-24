@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域</title>
+</head>
+<body>
+<script>
+    function one() {
+        //这个'a'仅属于函数'one()'
+        var a = 1;
+        console.log(a);
+    }
+
+    function two() {
+        //这个'a'仅属于函数'two()'
+        var a = 2;
+        console.log(a);
+    }
+
+    one();//1
+    two();//2
+
+    function outer() {
+        var a = 1;
+        function inner() {
+            var b = 2;
+            //我们可以在这里同时访问 'a', 'b'
+            console.log( a + b);//3
+        }
+
+        inner();
+
+        //我们在这里只能访问'a'
+        console.log(a);
+    }
+
+    outer();
+</script>
+</body>
+</html>
