@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>仿表单填写步骤流程</title>
+    <style>
+        ul, li, form, h1, h2, h3, h4, h5, h6, dl, dt, dd {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .regstep {
+            height: 30px;
+            background: rgb(227, 237, 244);
+            width: 804px;
+            margin: 0 auto;
+            margin-bottom: 5px;
+        }
+        .regstep li {
+            width: 25%;
+            text-align: center;
+            float: left;
+            line-height: 30px;
+            color: #999;
+            font-size: 14px;
+            background: url(./bg02.png) right 0 no-repeat;
+        }
+        .regstep li.regcurrent {
+            background: url(./bg02.png) right -30px no-repeat rgb(96, 198, 231);
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .regstep li.reglast {
+            background: none;
+        }
+    </style>
+</head>
+<body>
+<!--填写流程参考地址：http://125.35.6.80:8080/ftba/itownet/registerUser.do?method=jumpReg-->
+<ul class="regstep">
+    <li id="fonttxxx" class="regcurrent">填写信息</li>
+    <li id="fontscwj">上传文件</li>
+    <li id="fontdsjsh">待省局审核</li>
+    <li class="reglast">注册成功</li>
+</ul>
+
+</body>
+</html>
