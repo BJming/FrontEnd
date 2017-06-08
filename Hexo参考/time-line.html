@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*来源：http://lotabout.me/very-simple//css/very-simple.css*/
+        .container {
+            box-sizing: border-box;
+            margin: auto;
+            width: 100%;
+            max-width: 720px;
+        }
+
+        /* post entries, version 2*/
+        #index-main.container {
+            position: relative;
+            box-sizing: border-box; }
+        #index-main.container::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 6px;
+            background: #666; }
+        @media only screen and (max-width: 900px) {
+            #index-main.container::before {
+                content: none; } }
+
+        .post-tags-template, .post-entry .post-desc .post-tags, .post-entry .post-desc .post-categories {
+            display: inline-block;
+            margin-left: .5rem;
+            text-align: right;
+            color: #666;
+            opacity: .6;
+            transition: opacity .3s ease-in-out; }
+        .post-tags-template:hover, .post-entry .post-desc .post-tags:hover, .post-entry .post-desc .post-categories:hover {
+            opacity: 1; }
+        .post-tags-template::before, .post-entry .post-desc .post-tags::before, .post-entry .post-desc .post-categories::before {
+            content: "\f02c";
+            font-family: FontAwesome; }
+        .post-tags-template a, .post-entry .post-desc .post-tags a, .post-entry .post-desc .post-categories a {
+            text-decoration: none;
+            outline: none;
+            color: #666;
+            margin: 0 .3rem;
+            transition: border .2s ease-in-out; }
+        .post-tags-template a:hover, .post-entry .post-desc .post-tags a:hover, .post-entry .post-desc .post-categories a:hover {
+            color: #333;
+            border-bottom: 2px solid #666; }
+
+        .post-entry {
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 1.5em 0;
+            padding: 0 1.5em;
+            position: relative;
+            display: flex;
+            align-items: center; }
+        @media only screen and (max-width: 900px) {
+            .post-entry {
+                flex-direction: column;
+                padding: 0;
+                margin: 3.5em 0;
+                align-items: initial; }
+            .post-entry:first-child {
+                margin-top: 0; } }
+        .post-entry .post-time {
+            flex: none;
+            font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+            font-size: 0.875rem;
+            margin-right: 1rem;
+            position: absolute;
+            right: 100%;
+            color: #CCC;
+            transition: color .2s ease-in-out;
+            white-space: nowrap;
+            top: 50%; }
+        @media only screen and (max-width: 900px) {
+            .post-entry .post-time {
+                order: 1;
+                margin: auto;
+                bottom: .2ex;
+                left: 0;
+                right: auto;
+                color: #666;
+                opacity: .6;
+                top: auto; } }
+        .post-entry .post-time::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #666;
+            border-radius: 100%;
+            left: calc(100% + 1rem + 6px/2 - 10px);
+            top: calc(50% - 10px); }
+        @media only screen and (max-width: 900px) {
+            .post-entry .post-time::before {
+                content: none;
+                left: calc(-1em - 10px); } }
+        .post-entry .post-time::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #FCF9E8;
+            border-radius: 100%;
+            transition: background-color .2s ease-in-out;
+            left: calc(100% + 1rem + 6px/2 - 8px);
+            top: calc(50% - 8px); }
+        @media only screen and (max-width: 900px) {
+            .post-entry .post-time::after {
+                content: none;
+                left: calc(-1em - 8px); } }
+        .post-entry:hover .post-time {
+            color: #666; }
+        .post-entry:hover .post-time::after {
+            background: #A1EFE9; }
+        .post-entry .post-desc {
+            flex: 1; }
+        .post-entry .post-desc .post-title {
+            border-bottom: 1px solid #EEE;
+            transition: border-color .2s ease;
+            font-weight: 600;
+            font-size: 1.2em; }
+        .post-entry .post-desc .post-title:hover {
+            border-bottom: 1px solid #666; }
+        .post-entry .post-desc .post-title a {
+            color: #333;
+            text-decoration: none;
+            border: none;
+            display: block;
+            min-height: 1ex;
+            outline: none; }
+        .post-entry .post-desc .post-meta {
+            text-align: right;
+            min-height: 2em;
+            display: flex;
+            align-items: flex-end;
+            flex-direction: row-reverse;
+            justify-content: flex-start; }
+        .post-entry .post-desc .post-categories::before {
+            content: "\f07b"; }
+        @media only screen and (max-width: 414px) {
+            .post-entry .post-desc .post-tags {
+                display: none; }
+            .post-entry .post-desc .post-categories {
+                margin: 0; } }
+        .post-entry .post-desc .post-content {
+            padding-left: 2em; }
+        @media only screen and (max-width: 900px) {
+            .post-entry .post-desc .post-content {
+                padding-left: 0; } }
+        .post-entry .post-desc .post-content p {
+            margin: 0.6em 0 0 0; }
+    </style>
+</head>
+<body>
+<!--来源：http://lotabout.me/very-simple/-->
+<article>
+    <div id="index-main" class="container entries">
+        <div class="post-entry">
+            <div class="post-time">2016-10-24</div>
+            <div class="post-desc">
+                <div class="post-title"><a href="/very-simple/2016/10/24/hello-world/">Hello World</a></div>
+                <div class="post-content"><p>Welcome to <a href="http://hexo.io/" target="_blank"
+                                                           rel="external">Hexo</a>! This is your very first post. Check
+                    <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If
+                    you get any problems when using Hexo, you can find the answer in <a
+                            href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a>
+                    or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.
+                </p></div>
+                <div class="post-meta"></div>
+            </div>
+        </div>
+        <div class="post-entry">
+            <div class="post-time">2013-12-26</div>
+            <div class="post-desc">
+                <div class="post-title"><a href="/very-simple/2013/12/26/images/">Images</a></div>
+                <div class="post-content"><p>This is a image test post.</p></div>
+                <div class="post-meta"></div>
+            </div>
+        </div>
+        <div class="post-entry">
+            <div class="post-time">2013-12-25</div>
+            <div class="post-desc">
+                <div class="post-title"><a href="/very-simple/2013/12/25/no-title/"></a></div>
+                <div class="post-content"><p>This post doesn’t have a title. Make sure it’s accessible.</p></div>
+                <div class="post-meta"></div>
+            </div>
+        </div>
+        <div class="post-entry">
+            <div class="post-time">2013-12-25</div>
+            <div class="post-desc">
+                <div class="post-title"><a href="/very-simple/2013/12/25/excerpts/">Excerpts</a></div>
+                <div class="post-content"><p>The following contents should be invisible in home/archive page.</p></div>
+                <div class="post-meta"></div>
+            </div>
+        </div>
+        <div class="post-entry">
+            <div class="post-time">2013-12-25</div>
+            <div class="post-desc">
+                <div class="post-title"><a href="/very-simple/2013/12/25/videos/">Videos</a></div>
+                <div class="post-content"><p>This is a video test post.</p></div>
+                <div class="post-meta"></div>
+            </div>
+        </div>
+        <div class="post-entry">
+            <div class="post-time">2013-12-25</div>
+            <div class="post-desc">
+                <div class="post-title"><a href="/very-simple/2013/12/25/gallery-post/">Gallery Post</a></div>
+                <div class="post-content"><p>This post contains 4 photos:</p></div>
+                <div class="post-meta"></div>
+            </div>
+        </div>
+        <div class="post-entry">
+            <div class="post-time">2013-12-25</div>
+            <div class="post-desc">
+                <div class="post-title"><a href="/very-simple/2013/12/25/tag-plugins/">Tag Plugins</a></div>
+                <div class="post-content"><p>This post is used for testing tag plugins. See <a
+                        href="http://zespia.tw/hexo/docs/tag-plugins.html" target="_blank" rel="external">docs</a> for
+                    more info.</p></div>
+                <div class="post-meta"></div>
+            </div>
+        </div>
+        <div class="post-entry">
+            <div class="post-time">2013-12-24</div>
+            <div class="post-desc">
+                <div class="post-title"><a href="http://www.google.com/" target="_blank"
+                                           itemprop="url">www.google.com</a></div>
+                <div class="post-content"><p>This is a link post without a title. The title should be the link with or
+                    without protocol. Clicking on the link should open <a href="http://www.google.com/" target="_blank"
+                                                                          rel="external">Google</a> in a new tab or
+                    window.</p></div>
+                <div class="post-meta"></div>
+            </div>
+        </div>
+        <div class="post-entry">
+            <div class="post-time">2013-12-24</div>
+            <div class="post-desc">
+                <div class="post-title"><a href="/very-simple/2013/12/24/日本語テスト/">日本語テスト</a></div>
+                <div class="post-content"><p>This is a Japanese test post.</p></div>
+                <div class="post-meta"></div>
+            </div>
+        </div>
+        <div class="post-entry">
+            <div class="post-time">2013-12-24</div>
+            <div class="post-desc">
+                <div class="post-title"><a href="/very-simple/2013/12/24/中文測試/">中文測試</a></div>
+                <div class="post-content"><p>This is a Chinese test post.</p></div>
+                <div class="post-meta"></div>
+            </div>
+        </div>
+    </div>
+</article>
+</body>
+</html>
