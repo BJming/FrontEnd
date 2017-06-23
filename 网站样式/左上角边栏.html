@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>左上角边栏</title>
+    <style>
+        .main {
+            overflow: hidden;
+            background: #FFF;
+        }
+        a:-webkit-any-link {
+            /*color: -webkit-link;*/
+            cursor: auto;
+            text-decoration: none;
+        }
+        .back {
+            position: fixed;
+            top: 92px;
+            left: -21px;
+            width: 160px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            color: #FFF;
+            background-color: #656D78;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-transform-origin: left top;
+            transform-origin: left top;
+        }
+    </style>
+</head>
+<body>
+<!--TODO：开发成为一个jQuery插件，数据来源：数据字典-->
+<div class=".main">
+    <a class="back" href="http://www.ajianla.com" target="_blank">杭州检啦大数据</a>
+</div>
+</body>
+</html>
