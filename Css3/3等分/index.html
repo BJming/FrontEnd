@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父元素下子元素3等分</title>
+    <!--<link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* 来源：http://blog.csdn.net/xiaobing_hope/article/details/51285695 */
+
+        /*<!--浮动布局&百分比-->*/
+        /*前两种根据百分比的方法并不能实现完美的三等分，因为百分比是一个不准确的估算值，同时如果子元素有边框的情况下，很难均分。*/
+        /*.container{*/
+        /*overflow: hidden;*/
+        /*zoom:1;*/
+        /*width:500px;*/
+        /*height:200px;*/
+        /*border:1px solid red;*/
+        /*}*/
+        /*.childDiv{*/
+        /*float:left;*/
+        /*width:33.3%;*/
+        /*height:100%;*/
+        /*border:1px solid greenyellow;*/
+        /*}*/
+        /*方法二：行内元素（inline-block）+百分比*/
+        /*.container{*/
+        /*font-size:0;*/
+        /*overflow: hidden;*/
+        /*width:500px;*/
+        /*height:200px;*/
+        /*border:1px solid lightblue;*/
+        /*}*/
+        /*.childDiv{*/
+        /*display:inline-block;*/
+        /*width:33.3%;*/
+        /*height:100%;*/
+        /*border:1px solid gray;*/
+        /*}*/
+        /*方法三： 父元素  display:table  +  子元素   display:table-cell*/
+        /*.container{*/
+        /*width:500px;*/
+        /*height:200px;*/
+        /*display: table;*/
+        /*border:solid 1px lightblue;*/
+        /*}*/
+        /*.childDiv{*/
+        /*display:table-cell;*/
+        /*border:1px solid gray;*/
+        /*}*/
+        /*方法四： CSS3  display:flex；（flex布局）*/
+        /*.container{*/
+        /*width:500px;*/
+        /*height:200px;*/
+        /*display:flex;*/
+        /*border:1px solid lightblue;*/
+        /*}*/
+        /*.childDiv{*/
+        /*flex:1;*/
+        /*border:1px solid gray;*/
+        /*}*/
+        /*方法五：栅格系统（bootstrap）*/
+        /*给子元素添加class属性 class="col-md-3"*/
+        .container {
+            width: 500px;
+            height: 200px;
+            border: 1px solid lightblue;
+        }
+
+        .childDiv {
+            border:1px solid lightpink;
+            height:200px;
+        }
+
+        /*以上五种方法都可以实现父元素容器的三等分均分，但是前两种根据百分比的方法并不能实现完美的三等分，因为百分比是一个不准确的估算值，同时如果子元素有边框的情况下，很难均分。*/
+
+        /*优先使用后三种方法*/
+    </style>
+</head>
+<body>
+<!--<div class="container">-->
+<!--<div class="childDiv"></div>-->
+<!--<div class="childDiv"></div>-->
+<!--<div class="childDiv"></div>-->
+<!--</div>-->
+<div class="container">
+    <div class="row">
+        <div class="childDiv col-lg-3"></div>
+        <div class="childDiv col-lg-3"></div>
+        <div class="childDiv col-lg-3"></div>
+    </div>
+</div>
+</body>
+</html>

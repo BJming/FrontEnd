@@ -15,16 +15,22 @@
         /* post entries, version 2*/
         #index-main.container {
             position: relative;
-            box-sizing: border-box; }
+            box-sizing: border-box;
+        }
+
         #index-main.container::before {
             content: '';
             position: absolute;
             height: 100%;
             width: 6px;
-            background: #666; }
+            background: #666;
+        }
+
         @media only screen and (max-width: 900px) {
             #index-main.container::before {
-                content: none; } }
+                content: none;
+            }
+        }
 
         .post-tags-template, .post-entry .post-desc .post-tags, .post-entry .post-desc .post-categories {
             display: inline-block;
@@ -32,21 +38,30 @@
             text-align: right;
             color: #666;
             opacity: .6;
-            transition: opacity .3s ease-in-out; }
+            transition: opacity .3s ease-in-out;
+        }
+
         .post-tags-template:hover, .post-entry .post-desc .post-tags:hover, .post-entry .post-desc .post-categories:hover {
-            opacity: 1; }
+            opacity: 1;
+        }
+
         .post-tags-template::before, .post-entry .post-desc .post-tags::before, .post-entry .post-desc .post-categories::before {
             content: "\f02c";
-            font-family: FontAwesome; }
+            font-family: FontAwesome;
+        }
+
         .post-tags-template a, .post-entry .post-desc .post-tags a, .post-entry .post-desc .post-categories a {
             text-decoration: none;
             outline: none;
             color: #666;
             margin: 0 .3rem;
-            transition: border .2s ease-in-out; }
+            transition: border .2s ease-in-out;
+        }
+
         .post-tags-template a:hover, .post-entry .post-desc .post-tags a:hover, .post-entry .post-desc .post-categories a:hover {
             color: #333;
-            border-bottom: 2px solid #666; }
+            border-bottom: 2px solid #666;
+        }
 
         .post-entry {
             font-size: 16px;
@@ -55,15 +70,22 @@
             padding: 0 1.5em;
             position: relative;
             display: flex;
-            align-items: center; }
+            align-items: center;
+        }
+
         @media only screen and (max-width: 900px) {
             .post-entry {
                 flex-direction: column;
                 padding: 0;
                 margin: 3.5em 0;
-                align-items: initial; }
+                align-items: initial;
+            }
+
             .post-entry:first-child {
-                margin-top: 0; } }
+                margin-top: 0;
+            }
+        }
+
         .post-entry .post-time {
             flex: none;
             font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
@@ -74,7 +96,9 @@
             color: #CCC;
             transition: color .2s ease-in-out;
             white-space: nowrap;
-            top: 50%; }
+            top: 50%;
+        }
+
         @media only screen and (max-width: 900px) {
             .post-entry .post-time {
                 order: 1;
@@ -84,7 +108,10 @@
                 right: auto;
                 color: #666;
                 opacity: .6;
-                top: auto; } }
+                top: auto;
+            }
+        }
+
         .post-entry .post-time::before {
             content: '';
             position: absolute;
@@ -92,12 +119,17 @@
             height: 20px;
             background: #666;
             border-radius: 100%;
-            left: calc(100% + 1rem + 6px/2 - 10px);
-            top: calc(50% - 10px); }
+            left: calc(100% + 1rem + 6px / 2 - 10px);
+            top: calc(50% - 10px);
+        }
+
         @media only screen and (max-width: 900px) {
             .post-entry .post-time::before {
                 content: none;
-                left: calc(-1em - 10px); } }
+                left: calc(-1em - 10px);
+            }
+        }
+
         .post-entry .post-time::after {
             content: '';
             position: absolute;
@@ -106,53 +138,138 @@
             background: #FCF9E8;
             border-radius: 100%;
             transition: background-color .2s ease-in-out;
-            left: calc(100% + 1rem + 6px/2 - 8px);
-            top: calc(50% - 8px); }
+            left: calc(100% + 1rem + 6px / 2 - 8px);
+            top: calc(50% - 8px);
+        }
+
         @media only screen and (max-width: 900px) {
             .post-entry .post-time::after {
                 content: none;
-                left: calc(-1em - 8px); } }
+                left: calc(-1em - 8px);
+            }
+        }
+
         .post-entry:hover .post-time {
-            color: #666; }
+            color: #666;
+        }
+
         .post-entry:hover .post-time::after {
-            background: #A1EFE9; }
+            background: #A1EFE9;
+        }
+
         .post-entry .post-desc {
-            flex: 1; }
+            flex: 1;
+        }
+
         .post-entry .post-desc .post-title {
             border-bottom: 1px solid #EEE;
             transition: border-color .2s ease;
             font-weight: 600;
-            font-size: 1.2em; }
+            font-size: 1.2em;
+        }
+
         .post-entry .post-desc .post-title:hover {
-            border-bottom: 1px solid #666; }
+            border-bottom: 1px solid #666;
+        }
+
         .post-entry .post-desc .post-title a {
             color: #333;
             text-decoration: none;
             border: none;
             display: block;
             min-height: 1ex;
-            outline: none; }
+            outline: none;
+        }
+
         .post-entry .post-desc .post-meta {
             text-align: right;
             min-height: 2em;
             display: flex;
             align-items: flex-end;
             flex-direction: row-reverse;
-            justify-content: flex-start; }
+            justify-content: flex-start;
+        }
+
         .post-entry .post-desc .post-categories::before {
-            content: "\f07b"; }
+            content: "\f07b";
+        }
+
         @media only screen and (max-width: 414px) {
             .post-entry .post-desc .post-tags {
-                display: none; }
+                display: none;
+            }
+
             .post-entry .post-desc .post-categories {
-                margin: 0; } }
+                margin: 0;
+            }
+        }
+
         .post-entry .post-desc .post-content {
-            padding-left: 2em; }
+            padding-left: 2em;
+        }
+
         @media only screen and (max-width: 900px) {
             .post-entry .post-desc .post-content {
-                padding-left: 0; } }
+                padding-left: 0;
+            }
+        }
+
         .post-entry .post-desc .post-content p {
-            margin: 0.6em 0 0 0; }
+            margin: 0.6em 0 0 0;
+        }
+    </style>
+    <style>
+        .thumbnail {
+            margin-bottom: 20px;
+            padding: 0px;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            border-radius: 0px;
+        }
+
+        .item.list-group-item {
+            float: none;
+            width: 100%;
+            background-color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .item.list-group-item:nth-of-type(odd):hover, .item.list-group-item:hover {
+            background: #428bca;
+        }
+
+        .item.list-group-item .list-group-image {
+            margin-right: 10px;
+        }
+
+        .item.list-group-item .thumbnail {
+            margin-bottom: 0px;
+        }
+
+        .item.list-group-item .caption {
+            padding: 9px 9px 0px 9px;
+        }
+
+        .item.list-group-item:nth-of-type(odd) {
+            background: #eeeeee;
+        }
+
+        .item.list -group-item:before, .item.list-group- item:after {
+            display: table;
+            content: " ";
+        }
+
+        .item.list-group-item img {
+            float: left;
+        }
+
+        .item.list-group-item:after {
+            clear: both;
+        }
+
+        .list-group-item-text {
+            margin: 0 0 11px;
+        }
     </style>
 </head>
 <body>
@@ -253,5 +370,69 @@
         </div>
     </div>
 </article>
+<div class="container">
+    <div class="btn-wrapper">
+        <strong>显示为：</strong>
+        <div class="btn-group">
+            <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
+            </span>列表布局</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
+                class="glyphicon glyphicon-th"></span>网格布局</a>
+        </div>
+    </div>
+    <div id="products" class="row list-group">
+        <div class="item  col-xs-4 col-lg-4">
+            <div class="thumbnail">
+                <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt=""/>
+                <div class="caption">
+                    <h4 class="group inner list-group-item-heading">
+                        Product title</h4>
+                    <p class="group inner list-group-item-text">图片描述信息</p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                                $21.000</p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <a class="btn btn-success" href="#">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item  col-xs-4 col-lg-4">
+            <div class="thumbnail">
+                <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt=""/>
+                <div class="caption">
+                    <h4 class="group inner list-group-item-heading">
+                        Product title</h4>
+                    <p class="group inner list-group-item-text">图片描述信息</p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                                $21.000</p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <a class="btn btn-success" href="#">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        ......
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('#list').click(function (event) {
+            event.preventDefault();
+            $('#products .item').addClass('list-group-item');
+        });
+        $('#grid').click(function (event) {
+            event.preventDefault();
+            $('#products .item').removeClass('list-group-item');
+            $('#products .item').addClass('grid-group-item');
+        });
+    });
+</script>
 </body>
 </html>
